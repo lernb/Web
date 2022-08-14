@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+
+  }
+</style>
+
+<body>
+  <!-- draggable拖拽 -->
+  <div class="box" draggable="true"></div>
+
+  <script>
+    var box = document.getElementsByClassName('box')[0];
+
+    // ondragstart拖拽开始
+    box.ondragstart = function () {
+      console.log('拖拽开始！');
+    }
+
+    // ondragleave拖拽离开，鼠标离开被拖拽的元素时触发
+    box.ondragleave = function () {
+      console.log('拖拽离开！');
+    }
+
+    // ondragend拖拽结束
+    box.ondragend = function () {
+      console.log('拖拽结束！');
+    }
+
+    // ondrag整个拖拽过程触发
+    box.ondrag = function () {
+      console.log('拖拽中！');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5新增表单属性</title>
+  <style>
+    form {
+      width: 100%;
+      /* 最大宽度*/
+      max-width: 640px;
+      /* 最小宽度*/
+      min-width: 320px;
+      margin: 0 auto;
+      font-family: "Microsoft Yahei";
+      font-size: 20px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      height: 30px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" novalidate><!-- novalidate关闭默认验证(只能用于form) -->
+    <fieldset>
+      <legend>表单属性</legend>
+      <!-- 
+        placeholder占位符，用于提示性文字
+        autofocus自动获取焦点
+        autocomplete自动完成，属性值on(默认)，off取消
+       -->
+      <label for="">
+        用户名：<input type="text" placeholder="如：张三" autofocus name="userName" autocomplete="on" required />
+      </label>
+
+      <!-- pattern自定义正则，用于验证表单 -->
+      <label for="">
+        电话：<input type="tel" pattern="1\d{10}" />
+      </label>
+
+      <!-- multiple文件上传多选或者多个邮箱地址 -->
+      <label for="">
+        multiple的表单: <input type="file" multiple>
+      </label>
+
+      <!-- 上传文件-->
+      <input type="file" name="file" multiple />
+
+      <input type="submit" />
+    </fieldset>
+  </form>
+</body>
+
+</html>

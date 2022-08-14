@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5新增音频视频标签</title>
+</head>
+
+<body>
+  <!-- 音频播放标签，autoplay自动播放，controls播放控件，loop循环播放，preload预加载(设置autoplay时将失效) -->
+  <audio src="" autoplay controls loop></audio>
+
+  <!-- 各浏览器不同格式兼容性写法，格式都不支持提示文字内容 -->
+  <audio controls loop>
+    <source src="yinyue.mp3" />
+    <source src="yinyue.ogg" />
+    <source src="yinyue.wav" />
+    抱歉，你的浏览器暂不支持此音频格式
+  </audio>
+
+  <!-- 视频播放标签 -->
+  <video src="video/movie.mp4" controls autoplay width="" height="" loop preload></video>
+  <!-- 各浏览器兼容性不同格式兼容性写法 -->
+  <video controls autoplay>
+    <source src="video/movie.mp4" />
+    <source src="video/movie.ogg" />
+    <source src="video/movie.webm" />
+    抱歉，不支持此视频
+  </video>
+</body>
+
+</html>

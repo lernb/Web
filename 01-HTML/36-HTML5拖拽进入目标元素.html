@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5拖拽进入目标元素</title>
+</head>
+
+<body>
+  <style>
+    .one {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: green;
+    }
+
+    .two {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      left: 300px;
+      top: 100px;
+      border: 1px solid #000;
+      background-color: red;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="one" draggable="true"></div>
+    <div class="two"></div>
+
+    <script>
+      var two = document.getElementsByClassName('two')[0];
+
+      // ondragenter拖拽进入目标元素时触发
+      two.ondragenter = function () {
+        console.log('进入目标元素！');
+      }
+
+      // ondragover当拖拽元素在目标元素上方时连续触发
+      two.ondragover = function (e) {
+        e.preventDefault();// 阻止默认拖拽事件，防止影响触发ondrop
+        console.log('正在over');
+      }
+
+      // ondragleave拖拽元素离开目标元素时触发
+      two.ondragleave = function () {
+        console.log('离开了！');
+      }
+
+      // ondrop当在目标元素上方松开鼠标时触发
+      two.ondrop = function () {
+        console.log('松开了！');
+      }
+    </script>
+  </body>
+
+</html>

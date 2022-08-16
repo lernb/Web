@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+</head>
+<style>
+  /* 
+    overflow设置超出范围的内容该如何处理
+    值有visible(默认，会全部显示出来)|hidden(隐藏)|auto(对于超出的内容显示滚动条，否则不显示滚动条)|scroll(无论内容是否超出都显示滚动条)
+  */
+  div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  .d1 {
+    overflow: hidden;
+  }
+  .d2 {
+    overflow: auto;
+  }
+  .d3 {
+    overflow: scroll;
+  }
+</style>
+<body>
+  <div class="d1">
+    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  </div>
+  <div class="d2">
+    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+  </div>
+  <div class="d3">
+    文字文字文字文字文字文字
+  </div>
+</body>
+</html>

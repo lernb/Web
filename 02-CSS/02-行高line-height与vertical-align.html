@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>行高line-height</title>
+  <style>
+    .dd {
+      border: 1px solid black;
+      /* 
+            line-height行高
+            文字在一行中的垂直位置是居中的，行高中的上下padding相同
+            所以为了严格保证字在行里面居中，约定行高、字号一般都是偶数,这样可以保证，它们的差一定偶数，就能够被2整除
+             */
+      line-height: 20px;
+      /* 单行文字设置垂直居中，根据文字在自己行中居中的原则，设置行高等于盒子高度即垂直居中 */
+      line-height: 100px;
+      height: 100px;
+      /* 文字水平居中 */
+      text-align: center;
+      /* 
+        vertical-align设置行内元素inline、行内块元素inline-block或table-cell表格单元格的垂直对齐方式
+        主要用于图片、文本、表格的垂直对齐
+       */
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dd">
+    这是div
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>背景background属性</title>
+  <style>
+    .bg {
+      /* 设置背景图片 */
+      background-image: url(./img/7.jpg);
+      /* 设置背景平铺 值有no-repeat|repeat-x|repeat-y，分别是不平铺，横向平铺，纵向平铺 */
+      background-repeat: no-repeat;
+      /* 
+      设置背景图片在容器中的位置，background-position:向右偏移量 向下偏移量
+      值可以使负值，还有left|right|center|bottom|top
+      */
+      background-position: center center;
+      /* 设置背景是否跟随滚动条滚动，值有scroll(默认值)|fixed，跟随滚动和固定 */
+      background-attachment: scroll;
+
+      /* CSS3中新增属性*/
+      /* 
+      控制从什么位置开始显示图片背景
+      padding-box默认值，从内边距位置开始显示背景
+      border-box从边框位置开始显示背景
+      content-box只从内容部分的位置显示背景
+      */
+      background-origin: border-box;
+      /* 
+      background-clip规定背景被裁切的范围
+      padding-box超出padding-box的部分会被裁切掉
+      border-box从超出border-box的部分会被裁切掉
+      content-box超出content-box的部分会被裁切掉
+      
+      如下这样的属性设置，超出内容部分的背景将被裁切掉：
+      background-origin: border-box;
+      background-clip: content-box;
+      */
+      background-clip: border-box;
+      /* 
+      background-size设置背景图片大小，可设置宽高，第一值为宽度，第二个为高度，如果只给一个值那第二个自动设置auto
+      还可以设置百分比
+      cover值表示保持图像的宽高比并将图片缩放至完全覆盖背景区域，图片超出部分会被隐藏
+      contain值表示保持图像的宽高比并将图片缩放至在背景区域内的最大大小
+      */
+      background-size: cover;
+
+      /* background属性合写 */
+      background: color image repeat position attachment;
+
+      /* 同时设置多个背景图像，用逗号隔开 */
+      background: url(images/bg1.png) no-repeat left top,
+        url(images/bg2.png) no-repeat left top,
+        url(images/bg3.png) no-repeat left top;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+</body>
+
+</html>

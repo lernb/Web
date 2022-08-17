@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绝对定位absolute</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 100px;
+      top: 200px;
+    }
+    /* 
+    绝对定位脱离文档流，定位起点在父容器的左上角或者左下角、
+    绝对定位之后标签就不区分所谓的行内元素、块级元素了，不需要display:block就可以设置宽、高
+
+    绝对定位的参考点：
+    1、如果用top，那么参考点就是页面的左上角，而不是浏览器的左上角
+    2、如果用bottom，那么参考点就是浏览器首屏窗口尺寸对应的页面的左下角
+
+    绝对定位的父辈盒子参考点：
+    绝对定位的元素，如果父辈元素是已定位（绝对定位、相对定位或固定定位）的元素，那么将以父辈这个元素作为为参考点
+    子绝父绝、子绝父相、子绝父固都是可以给绝对定位的子元素作为参考点
+    只有子绝父相具有实际意义，相对定位的父元素没有脱离文档流，其他两个都脱离了文档流，页面不稳固
+    
+    */
+  </style>
+</head>
+<body>
+  <div>绝对定位</div>
+</body>
+</html>

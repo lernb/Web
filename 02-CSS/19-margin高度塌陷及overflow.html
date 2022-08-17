@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="refresh" content="10;url="> -->
+    <title>margin高度塌陷</title>
+    <style>
+        .parent {
+            border: 1px solid lawngreen;
+            /* 解决父容器高度塌陷产生包裹性 */
+            /* overflow: hidden; */
+        }
+        .parent::before, .parent::after {
+            content: " ";
+            display: table;
+        }
+        .parent::after {
+            clear: both;
+        }
+        .child {
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .c3 {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child c3"></div>
+    </div>
+</body>
+</html>

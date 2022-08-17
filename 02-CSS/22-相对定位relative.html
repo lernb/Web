@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相对定位</title>
+</head>
+
+<body>
+  <style type="text/css">
+    body {
+      margin: 0px;
+    }
+
+    .div1 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+    .div2 {
+      position: relative;
+      /*相对定位：相对于自己原来的位置*/
+      left: 50px;
+      /*横坐标：正值表示向右偏移，负值表示向左偏移*/
+      top: 50px;
+      /*纵坐标：正值表示向下偏移，负值表示向上偏移*/
+
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+    /* 
+    相对定位不脱离标准文档流，老家留坑，别人不会把它的位置挤走。
+    也就是说，相对定位的真实位置还在老家，只不过影子出去了，可以到处飘。
+
+    相对定位的用途
+    1、微调元素
+    2、做绝对定位的参考，子绝父相
+
+    相对定位的定位值
+    left：盒子右移
+    right：盒子左移
+    top：盒子下移
+    bottom：盒子上移
+
+    负数值表示相反的方向
+    */
+  </style>
+  </head>
+
+  <body>
+
+    <div class="div1">有生之年</div>
+    <div class="div2">狭路相逢</div>
+  </body>
+
+</html>

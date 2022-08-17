@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IE6/7双倍margin问题</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      /* 
+      与浮动相同方向的margin在IE6中会出现第一个浮动元素双倍margin的问题
+      解决方法：
+      1、设置与float方向相反的margin
+      2、给第一个元素单独设置一半的的margin，使用IE6专用下划线开头属性，_margin-left
+      */
+      float: left;
+      margin-left: 40px;
+      width: 200px;
+      height: 50px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>固定定位fixed</title>
+  <style>
+    /* 固定定位相对浏览器窗口进行定位。无论页面如何滚动，这个盒子显示的位置不变,IE6不兼容 */
+    .backtop {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: gray;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="backtop"></div>
+</body>
+
+</html>

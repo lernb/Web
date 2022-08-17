@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>margin塌陷重叠</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+    .dd {
+      margin-bottom: 10px;
+      background-color: green;
+    }
+    .father {
+      margin-top: 20px;
+      background-color: blue;
+    }
+    /* 上方两个的div竖直方向的两个margin值不会叠加，只会取最大值作为margin */
+    
+    .son {
+      width: 50px;
+      height: 50px;
+      /* 
+      一个特殊现象：给子元素设置marign，连带父元素也同时具有子元素的margin
+      原因是父元素没有设置border属性
+      父与子元素的间距最好使用父元素的padding，margin主要用于兄弟元素的间距
+      */
+      margin-top: 40px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="dd"></div>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+</body>
+</html>

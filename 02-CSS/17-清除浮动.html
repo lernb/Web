@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clear清除浮动</title>
+    <style>
+        .banner {
+            border: 1px solid red;
+            height: 200px;
+            background-color: red;
+        }
+
+        .center {
+            border: 1px solid yellow;
+            /* 方法一：父容器div overflow:hidden闭合浮动，IE6不支持overflow:hidden */
+            overflow: hidden;
+            /* _zoom: 1兼容IE6，属性前加下划线是IE6的专用属性 */
+            _zoom: 1;
+        }
+
+        .left {
+            border: 1px solid blue;
+            height: 500px;
+            width: 100px;
+            float: left;
+            background-color: blue;
+        }
+
+        .right {
+            border: 1px solid lawngreen;
+            height: 600px;
+            width: 100px;
+            float: right;
+            background-color: lawngreen;
+        }
+        .main {
+            background-color: aqua;
+            margin: 0 104px;
+            height: 500px;
+        }
+
+        .footer {
+            border: 1px solid black;
+            height: 200px;
+            /* 方法二：clear:both清除浮动，但是会造成margin塌陷 */
+            /* clear: both; */
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">banner</div>
+    <div class="center">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="main"></div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

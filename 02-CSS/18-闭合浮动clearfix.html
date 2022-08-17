@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>闭合浮动</title>
+  <style>
+    div {
+      border: 1px solid red;
+    }
+
+    .fl {
+      background-color: aqua;
+      width: 200px;
+      height: 200px;
+      float: right;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+      content: " ";
+      /* 空格 兼容Opera浏览器 */
+      display: table;
+    }
+
+    .clearfix::after {
+      clear: both;
+    }
+
+    .clearfix {
+      /* 兼容IE 6/7 */
+      zoom: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clearfix">
+    梦想属于每一个人，广大劳动群众要敢想敢干、敢于追梦。说到底，实现中华民族伟大复兴的中国梦，要靠各行各业人们的辛勤劳动。现在，党和国家事业空间很大，只要有志气有闯劲，普通劳动者也可以在宽广舞台上展示自己的人生价值。
+    <div class="fl"></div>
+  </div>
+</body>
+
+</html>

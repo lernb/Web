@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>气泡三角形</title>
+    <style>
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            position: relative;
+            list-style-type: none;
+            width: 200px;
+            margin-top: 100px;
+        }
+        .menu li {
+            border: 1px solid black;
+        }
+        .menu::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            border: 10px solid black;
+            border-style: dashed dashed solid dashed;
+            border-color: transparent transparent black transparent;
+            top: -21%;
+            left: 45%;
+        }
+        .menu::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            border: 10px solid white;
+            border-style: dashed dashed solid dashed;
+            border-color: transparent transparent white transparent;
+            top: -20%;
+            left: 45%;
+        }
+
+        .main {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .main a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-size: 2em;
+        }
+
+        .btn1 {
+            position: relative;
+            border: 1px solid blueviolet;
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 6px;
+            background-color: blueviolet;
+        }
+
+        .btn1::before {
+            content: " ";
+            position: absolute;
+            /* background-color: aqua; */
+            /* width: 10px;
+            height: 10px; */
+            display: block;
+            left: 45%;
+            top: -35%;
+            border: 10px solid blueviolet;
+            border-color: transparent transparent blueviolet transparent;
+            border-style: dashed dashed solid dashed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="btn1"><a href="#">气泡按钮</a></div>
+        <ul class="menu">
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+        </ul>
+    </div>
+</body>
+
+</html>

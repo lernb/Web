@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类选择器</title>
+    <style>
+        /* 代表标签的不同状态 */
+        /* link和visited只能用于a标签 */
+        /* 
+        a:link{}和a{}的区别：
+        前者仅作用于带href属性的超链接标签(不包括锚点)，a{}作用于所有a标签包括锚点
+        所以在鞋样室的时候，伪类样式要写在a{}的后面
+        */
+        a:link {
+            color: red;
+        }
+        a:visited {
+            color: gray;
+        }
+        /* hover鼠标光标悬停时 */
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+        a:active {
+            color: lawngreen;
+        }
+        /* 顺序固定：LVHA / LoVe HAte */
+        
+        /* 获得焦点时 */
+        input:focus {
+          border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">首页</a>
+    <a href="#">产品</a>
+    <a href="#">新闻</a>
+    <a href="#">关于</a>
+    <input type="text">
+</body>
+</html>

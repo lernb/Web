@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后代和交集选择器</title>
+    <style>
+        /* 交集选择器或者叫标签指定式选择器，必须同时满足条件才符合 */
+        h1.hh {
+            color: red;
+        }
+
+        /* 后代选择器 */
+        .uu li a {
+            color: blue;
+            font-size: 20px;
+        }
+        /* 并集选择器 */
+        h1.hh, .uu li {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="hh">IT之家</h1>
+    <h1>IT之家</h1>
+    <h1>IT之家</h1>
+    <h2 class="hh">
+        目前，我们还无法证实该消息，该消息尚存在不确定性因素，甚至不排除是谣言。IT之家将继续关注该事件，并及时播报最新进展。
+    </h2>
+    <p>
+        如果上述信息属实，那么MIUI 11适配机型已经达到39款。从去年MIUI 10的适配情况来看的话，小米和红米两个系列超过40款机型得到适配，大部分小米或者红米系列机型得到适配。
+    </p>
+    <p>
+        另外，根据之前小米MIUI官方公众号发布的《MIUI 11，出发！》文章的评论内容来看，对于MIUI 11的改进，网友最为关心的是续航省电，还有网友建议MIUI 11的自动化功能会得到升级。
+    </p>
+    <ul class="uu">
+        <li><a href="#">超链接</a></li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+    </ul>
+</body>
+
+</html>

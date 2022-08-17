@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选择器权重</title>
+</head>
+
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>选择器类型</th>
+        <th>权重</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>!important</td>
+        <td>Infinity</td>
+      </tr>
+      <tr>
+        <td>行内样式</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>id选择器</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>class、属性、伪类选择器</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>标签选择器</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>通配符选择器</td>
+        <td>0</td>
+      </tr>
+      <!-- 无论祖先元素节点权重为多少，继承的权重为0 -->
+      <!-- 
+        如：.box #box div{}
+        #box权重为100，.box权重为10，标签div权重为1，所以此权重为1,1,1
+       -->
+    </tbody>
+  </table>
+</body>
+
+</html>

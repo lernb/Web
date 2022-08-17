@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>渐变背景</title>
+  <style>
+    div {
+      width: 500px;
+      height: 100px;
+      margin: 10px auto;
+      border: 1px solid #000;
+
+    }
+
+    /* 
+    属性值linear-gradient(方向, 起始颜色, 终止颜色) 
+    方向可以是to left|to right|to top|to bottom|度数(如30deg，顺时针30度方向)
+    */
+    div:nth-child(1) {
+      background-image: linear-gradient(to right, yellow, green);
+    }
+
+    div:nth-child(2) {
+      /* 不写方向，默认从上往下 */
+      background-image: linear-gradient(yellow, green);
+    }
+
+    div:nth-child(3) {
+      /* 指定角度 */
+      background-image: linear-gradient(30deg, yellow, green);
+    }
+
+    div:nth-child(4) {
+      /* 0%的位置开始出现黄色，40%的位置开始出现红色的过度。70%的位置开始出现绿色的过度，100%的位置开始出现蓝色 */
+      background-image: linear-gradient(45deg,
+          yellow 0%,
+          red 40%,
+          green 70%,
+          blue 100%);
+    }
+
+    /* 颜色之间，出现突变 */
+    div:nth-child(5) {
+      background-image: linear-gradient(45deg,
+          #000 0%,
+          #000 25%,
+          #fff 25%,
+          #fff 50%,
+          #000 50%,
+          #000 75%,
+          #fff 75%,
+          #fff 100%);
+    }
+
+    div:nth-child(6) {
+      background-image: linear-gradient(to right,
+          yellow 0%,
+          yellow 25%,
+          blue 25%,
+          blue 50%,
+          red 50%,
+          red 75%,
+          green 75%,
+          green 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+
+</html>

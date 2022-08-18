@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>伪元素选择器</title>
+  <style>
+    /* 选中元素中的第一个字符 */
+    p::first-letter {
+      font-size: 30px;
+    }
+
+    /* 选中元素中的第一行 */
+    p::first-line {
+      color: blueviolet;
+    }
+
+    .dd::before {
+      content: "“";
+      display: block;
+    }
+
+    .dd::after {
+      content: "”";
+      display: block;
+    }
+
+    /* 设置元素中被鼠标选中部分的样式 */
+    p::selection {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dd">
+    <span>内容内容</span>
+    <span>内容内容</span>
+    <span>内容内容</span>
+    <span>内容内容</span>
+    <span>内容内容</span>
+  </div>
+  <div>
+    <p>
+      如果上述信息属实，那么MIUI 11适配机型已经达到39款。从去年MIUI
+      10的适配情况来看的话，小米和红米两个系列超过40款机型得到适配，大部分小米或者红米系列机型得到适配。另外，根据之前小米MIUI官方公众号发布的《MIUI 11，出发！》文章的评论内容来看，对于MIUI
+      11的改进，网友最为关心的是续航省电，还有网友建议MIUI 11的自动化功能会得到升级。
+    </p>
+  </div>
+</body>
+
+</html>

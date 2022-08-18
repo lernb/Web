@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS3结构伪类选择器</title>
+  <style>
+    /* 匹配父元素的第一个子元素 */
+    span:first-child {
+      color: red;
+    }
+
+    /* 匹配父元素的最后一个子元素 */
+    span:last-child {
+      color: blue;
+    }
+
+    /* nth-last-child(n)匹配父元素的倒数第n个子元素 */
+    span:nth-last-child(2) {
+      color: green;
+    }
+
+    /* nth-last-child(-n+3)匹配后3个子元素 */
+    span:nth-last-child(-n+3) {
+      color: green;
+    }
+
+    /* nth-child(n)匹配父元素的第n个子元素 */
+    span:nth-child(3) {
+      color: purple;
+    }
+
+    /* nth-child(-n+3)匹配前3子元素 */
+    span:nth-child(3) {
+      color: purple;
+    }
+
+    /* 匹配父元素的奇数个子元素 */
+    span:nth-child(odd) {
+      color: purple;
+    }
+
+    /* 匹配父元素的偶数个子元素 */
+    span:nth-child(even) {
+      color: purple;
+    }
+
+    /* 匹配同类型中的第一个兄弟元素 */
+    span:first-of-type {
+      color: blue;
+    }
+
+    /* 匹配同类型中的最后一个兄弟元素 */
+    span:last-of-type {
+      color: blue;
+    }
+
+    /* 匹配同类型中的第n个兄弟元素 */
+    span:nth-of-type(n) {
+      color: blue;
+    }
+
+    /* 匹配同类型中的倒数第n个兄弟元素 */
+    span:nth-last-of-type(n) {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dd">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-sizing</title>
+  <style>
+    /* box-sizing允许指定盒子宽高的计算方式 */
+    .d1 {
+      /* 外加模式(css默认方式)，此时的宽高计算的是盒子内容区 */
+      box-sizing: content-box;
+    }
+    .d2 {
+      /* 内减模式，此时的宽高计算的是盒子的总宽高，包含边框、padding，改变边框或者padding尺寸盒子总尺寸不变 */
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="d1">其实很简单</div>
+  <div class="d2">其实很简单</div>
+</body>
+</html>

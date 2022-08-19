@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浮动</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+    }
+    .d1 {
+      background-color: red;
+    }
+    /* 
+    浮动元素的特征：
+    1、浮动只限于水平方向
+    2、浮动元素脱离文档流，后面的元素会上移填补它原来的位置
+    3、浮动不会影响前面元素的布局，只会影响到后面的元素
+    4、元素浮动之后就具有了块级元素的特征
+    5、浮动的元素会向左或向右贴靠，直到碰到所在容器的边框或者另一个浮动元素
+    6、浮动元素的字围效果，文字不会被浮动遮挡，会围绕在浮动的周围
+    */
+    .d2 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+    .d3 {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="d1"></div>
+  <div class="d2"></div>
+  <div class="d3"></div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform 3D转换</title>
+  <style>
+    .item {
+      width: 200px;
+      height: 200px;
+      margin: 0 0 20px 200px;
+      border: 1px solid purple;
+      transition: transform .8s ease-in-out;
+    }
+
+    /* 
+    水平向右为X轴正方向，垂直向下为Y轴正方向，垂直屏幕朝外为Z轴正方向
+    */
+    /* 
+    旋转方向（左手法则）
+    左手握住旋转轴，大拇指指向正方向，其余手指握住方向就是旋转方向
+    */
+    .rot, .trans {
+
+      /* 
+      perspective透视：添加给父元素，设置眼睛到平面的距离
+      在视觉上产生3D效果
+      */
+      perspective: 900px;
+    }
+
+    /* 绕X轴旋转 */
+    .rot .item:nth-child(1):hover {
+      transform: rotateX(360deg);
+    }
+
+    /* 绕Y轴旋转 */
+    .rot .item:nth-child(2):hover {
+      transform: rotateY(360deg);
+    }
+
+    /* 绕Z轴旋转 */
+    .rot .item:nth-child(3):hover {
+      transform: rotateZ(360deg);
+    }
+
+    .trans .item:nth-child(1):hover  {
+      transform: translateX(100px);
+    }
+
+    .trans .item:nth-child(2):hover  {
+      transform: translateY(100px);
+    }
+
+    .trans .item:nth-child(3):hover  {
+      transform: translateZ(100px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rot">
+    <div class="item">绕X轴旋转</div>
+    <div class="item">绕Y轴旋转</div>
+    <div class="item">绕Z轴旋转</div>
+  </div>
+  <div class="trans">
+    <div class="item">translateX</div>
+    <div class="item">translateY</div>
+    <div class="item">translateZ</div>
+  </div>
+</body>
+
+</html>

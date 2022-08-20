@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform 2D转换</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    li {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 40px;
+      outline: 1px solid #ccc;
+      transition: transform .5s ease-in-out;
+    }
+
+    li:first-child:hover {
+      /* 水平，垂直位移，不影响原布局，可以是百分比*/
+      transform: translate(10px, 10px);
+    }
+
+    li:nth-child(2):hover {
+      /* 水平，垂直缩放，无单位，数值，可小数，只写一个就是等比例缩放 */
+      transform: scale(1.2, 0.8);
+    }
+
+    li:nth-child(3):hover {
+      /* 旋转，可负数值，正数顺时针旋转，负数逆时针旋转 */
+      /* transform: rotate(45deg); */
+      transform: rotate(-45deg);
+      /* transform-origin: 0 0; 设置原点*/
+    }
+
+    li:nth-child(4):hover {
+      transform: skew(-30deg, 0);
+      /* transform-origin: 0 0; 设置原点*/
+    }
+
+    li:nth-child(5):hover {
+      /* transform属性合写 */
+      transform: translate(20%, 20%) rotate(210deg);
+      /* transform-origin: 0 0; 设置原点*/
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li>translate()位移</li>
+      <li>scale()缩放</li>
+      <li>rotate()旋转</li>
+      <li>skew()倾斜</li>
+      <li>位移和旋转</li>
+    </ul>
+  </div>
+</body>
+
+</html>

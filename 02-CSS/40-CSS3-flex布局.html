@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex弹性布局</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 0;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 4px;
+            font-size: 14px;
+            border: 1px solid slateblue;
+            background-color: slateblue;
+            color: #fff;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .active {
+            border: 1px solid slateblue;
+            background-color: #fff;
+            color: slateblue;
+        }
+        
+        .btn:hover {
+            border: 1px solid slateblue;
+            background-color: #fff;
+            color: slateblue;
+        }
+
+
+        .wrapper {
+            position: relative;
+            height: 220px;
+            outline: 1px solid #ccc;
+        }
+
+        .box {
+            position: absolute;
+            width: 600px;
+            height: 200px;
+            background-color: slateblue;
+            padding: 10px 20px;
+            outline: 1px solid #ccc;
+
+            /* 定义flex布局方式 */
+            display: flex;
+        }
+
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+            color: #6d6d6d;
+            text-align: center;
+            line-height: 50px;
+            outline: 1px solid #ccc;
+        }
+
+        .flex-direction-box {
+            display: none;
+        }
+
+        .flex-direction-box .item {
+            margin: 5px 5px;
+        }
+
+        /* 定义主轴方向，即项目排列方向 */
+        .flex-direction-row {
+            /* 水平方向 */
+            flex-direction: row;
+        }
+
+        .flex-direction-row-reverse {
+            /* 水平反向 */
+            flex-direction: row-reverse;
+        }
+
+        .flex-direction-column {
+            /* 垂直方向 */
+            flex-direction: column;
+        }
+
+        .flex-direction-column-reverse {
+            /* 垂直反向 */
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+
+        任何一个容器都可以指定为 Flex 布局。
+        .box{
+            display: flex;
+        }
+
+        行内元素也可以使用 Flex 布局。
+        .box{
+            display: inline-flex;
+        }
+
+        **Webkit 内核的浏览器，必须加上-webkit前缀。
+        .box{
+            display: -webkit-flex; /* Safari */
+            display: flex;
+        }
+        ***注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效
+
+        Flex布局的元素成为flex容器（简称容器），所有子元素为flex项目（简称项目）
+
+        容器默认存在两根轴，水平的主轴（main axis），垂直的交叉轴（cross axis）
+        主轴开始的位置为main start，结束的位置为main end
+        交叉轴开始的位置为cross start，结束的位置为cross end
+        项目默认沿着主轴排列，单个项目占据的主轴空间成为main size，占据的交叉轴空间为cross size
+    -->
+
+    <!-- 容器的属性 -->
+    <h1>容器的属性（flex-direction | flex-wrap | flex-flow | justify-content | align-items | align-content）</h1>
+    <h2>flex-direction（主轴方向，即项目排列方向）</h2>
+    <h3>.box {flex-direction: <div class="btn fd-btn active">row(默认值)</div> | <div class="btn fd-btn">row-reverse</div>
+        | <div class="btn fd-btn">column</div> | <div class="btn fd-btn">column-revers</div>}</h3>
+    <div class="wrapper">
+        <div class="box flex-direction-box flex-direction-row" style="display: flex;">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+        <div class="box flex-direction-box flex-direction-row-reverse">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+        <div class="box flex-direction-box flex-direction-column">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+        <div class="box flex-direction-box flex-direction-column-reverse">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+    <h2>flex-wrap（项目换行方式）</h2>
+    <h3>.box {flex-wrap: <div class="btn fw-btn active">nowrap</div> | <div class="btn fw-btn">wrap</div> | <div class="btn fw-btn">wrap-reverse</div>}</h3>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+    <h2>flex-flow（flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap）</h2>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+    <h2>justify-content（项目在主轴上的对其方式）</h2>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+    <h2>align-items（项目在交叉轴上的对齐方式）</h2>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+    <h2>align-content（多根轴线的对齐方式）</h2>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/flex语法.js"></script>
+</body>
+
+</html>

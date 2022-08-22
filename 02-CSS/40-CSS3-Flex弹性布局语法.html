@@ -223,8 +223,31 @@
       flex-grow: 1;
     }
 
+    .iffs .item {
+      flex-shrink: 1;
+    }
+
     .iffs .item:nth-child(1) {
       flex-shrink: 0;
+    }
+
+    .iffb .item:nth-child(1) {
+      flex-basis: 40px;
+    }
+
+    .iffl .item {
+      /* flex-grow, flex-shrink, flex-basis */
+      flex: 0 1 auto;
+    }
+
+    .iffl .item:nth-child(2) {
+      /* flex-grow, flex-shrink, flex-basis */
+      flex: 1 1 auto;
+    }
+
+    .ifas .item:nth-child(1) {
+      /* 属性值与父元素align-items属性相同，默认值为auto，表示继承父元素align-items属性 */
+      align-self: flex-end;
     }
   </style>
 </head>
@@ -536,24 +559,24 @@
       </div>
     </div>
     <div class="f">
-      <h3>flex-grow</h3>
-      <div class="box iffg">
+      <h3>flex-basis</h3>
+      <div class="box iffb">
         <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
       </div>
     </div>
     <div class="f">
-      <h3>flex-grow</h3>
-      <div class="box iffg">
+      <h3>flex</h3>
+      <div class="box iffl">
         <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
       </div>
     </div>
     <div class="f">
-      <h3>flex-grow</h3>
-      <div class="box iffg">
+      <h3>align-self</h3>
+      <div class="box ifas">
         <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>

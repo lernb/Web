@@ -22,12 +22,12 @@
 
     .ff {
       flex-wrap: wrap;
-      justify-content: space-between;
       margin-bottom: 20px;
     }
 
     .f {
       flex-direction: column;
+      margin-right: 6px;
     }
 
     /* 采用flex布局的元素成为flex容器，其中所有的子元素自动变为flex项目 */
@@ -152,6 +152,39 @@
 
     .ais {
       align-items: stretch;
+    }
+
+    /* 
+      align-content定义了多根轴线的对齐方式，如果只有一根轴线则不起作用
+      flex-start: 与交叉轴的起点对齐
+      flex-end: 与交叉轴的终点对齐
+      center: 与交叉轴的中点对齐
+      space-between: 与交叉轴的两端对齐，轴线之间间隔相等
+      space-around: 轴线之间间隔相等，所以周线之间的间隔比轴线与容器边框之间的间隔大一倍
+      stretch: 默认值，占满整个交叉轴
+    */
+    .acfs {
+      align-content: flex-start;
+    }
+
+    .acfe {
+      align-content: flex-end;
+    }
+
+    .acc {
+      align-content: center;
+    }
+
+    .acsb {
+      align-content: space-between;
+    }
+
+    .acsa {
+      align-content: space-around;
+    }
+
+    .acs {
+      align-content: stretch;
     }
   </style>
 </head>
@@ -334,6 +367,98 @@
         <div class="item" style="height: auto;">2</div>
         <div class="item" style="height: auto;">3</div>
         <div class="item" style="height: auto;">4</div>
+      </div>
+    </div>
+  </div>
+  <div class="ff">
+    <div class="f">
+      <h3>align-content: flex-start</h3>
+      <div class="box acfs" style="flex-wrap: wrap;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">0</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-content: flex-end</h3>
+      <div class="box acfe" style="flex-wrap: wrap;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">0</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-content: center</h3>
+      <div class="box acc" style="flex-wrap: wrap;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">0</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-content: space-between</h3>
+      <div class="box acsb" style="flex-wrap: wrap;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">0</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-content: space-around</h3>
+      <div class="box acsa" style="flex-wrap: wrap;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">0</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-content: stretch</h3>
+      <div class="box acs" style="flex-wrap: wrap;">
+        <div class="item" style="height: auto;">1</div>
+        <div class="item" style="height: auto;">2</div>
+        <div class="item" style="height: auto;">3</div>
+        <div class="item" style="height: auto;">4</div>
+        <div class="item" style="height: auto;">5</div>
+        <div class="item" style="height: auto;">6</div>
+        <div class="item" style="height: auto;">7</div>
+        <div class="item" style="height: auto;">8</div>
+        <div class="item" style="height: auto;">0</div>
+        <div class="item" style="height: auto;">10</div>
       </div>
     </div>
   </div>

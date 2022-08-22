@@ -125,6 +125,34 @@
     .jcsa {
       justify-content: space-around;
     }
+
+    /* 
+      align-items属性定义项目在交叉轴的对齐方式
+      flex-start: 项目与交叉轴的起点对齐
+      flex-end: 项目与交叉轴的重点对齐
+      center: 与交叉轴的中点对齐
+      baseline: 与第一行文字的基线对齐
+      stretch: 默认值，如果项目没有设置高度或者高度为auto，默认将沾满整个容器的高度
+    */
+    .aifs {
+      align-items: flex-start;
+    }
+
+    .aife {
+      align-items: flex-end;
+    }
+
+    .aic {
+      align-items: center;
+    }
+
+    .aib {
+      align-items: baseline;
+    }
+
+    .ais {
+      align-items: stretch;
+    }
   </style>
 </head>
 
@@ -259,6 +287,53 @@
         <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
+      </div>
+    </div>
+  </div>
+  <div class="ff">
+    <div class="f">
+      <h3>align-items: flex-start</h3>
+      <div class="box aifs">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-items: flex-end</h3>
+      <div class="box aife">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-items: center</h3>
+      <div class="box aic">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-items: baseline</h3>
+      <div class="box aib">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>align-items: stretch</h3>
+      <div class="box ais">
+        <div class="item" style="height: auto;">1</div>
+        <div class="item" style="height: auto;">2</div>
+        <div class="item" style="height: auto;">3</div>
+        <div class="item" style="height: auto;">4</div>
       </div>
     </div>
   </div>

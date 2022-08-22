@@ -186,6 +186,46 @@
     .acs {
       align-content: stretch;
     }
+
+    /* 
+      项目的属性：
+      order|flex-grow|flex-shrink|flex-basis|flex|align-self
+    */
+    /* 
+      order属性定义项目的排列顺序，数值越小排列越靠前，默认为0
+      flex-grow属性定义项目放大比例，默认为0，即如果容器存在剩余空间也不放大
+      flex-shrink定义项目的缩小比例，默认为1，即如果容器空间不足，项目将缩小
+      flex-basis属性定义了在分配多余容器空间之前，项目占据的主轴空间。浏览器根据此属性计算是否有剩余空间，默认为auto，即项目本来大小
+      flex属性是flex-grow, flex-shrink, flex-basis三个属性的合写，默认值为0, 1, auto，后两个属性可选
+      align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性，默认为auto，表示继承父元素的align-items属性，如果没有父元素，等同于stretch
+    */
+    .ifo .item:nth-child(1) {
+      order: 3;
+    }
+
+    .ifo .item:nth-child(2) {
+      order: 4;
+    }
+
+    .ifo .item:nth-child(3) {
+      order: -1;
+    }
+
+    .iffg .item:nth-child(1) {
+      flex-grow: 1;
+    }
+
+    .iffg .item:nth-child(2) {
+      flex-grow: 2;
+    }
+
+    .iffg .item:nth-child(3) {
+      flex-grow: 1;
+    }
+
+    .iffs .item:nth-child(1) {
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -457,8 +497,66 @@
         <div class="item" style="height: auto;">6</div>
         <div class="item" style="height: auto;">7</div>
         <div class="item" style="height: auto;">8</div>
-        <div class="item" style="height: auto;">0</div>
+        <div class="item" style="height: auto;">9</div>
         <div class="item" style="height: auto;">10</div>
+      </div>
+    </div>
+  </div>
+  <h2>项目的属性：order|flex-grow|flex-shrink|flex-basis|flex|align-self</h2>
+  <div class="ff">
+    <div class="f">
+      <h3>order</h3>
+      <div class="box ifo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>flex-grow</h3>
+      <div class="box iffg">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>flex-shrink</h3>
+      <div class="box iffs">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>flex-grow</h3>
+      <div class="box iffg">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>flex-grow</h3>
+      <div class="box iffg">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+    <div class="f">
+      <h3>flex-grow</h3>
+      <div class="box iffg">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
       </div>
     </div>
   </div>

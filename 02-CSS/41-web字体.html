@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web字体</title>
+  <style>
+    p {
+      font-size: 30px;
+    }
+
+    /*  如果要在网页中使用web字体（用户电脑上没有这种字体）*/
+    /* 第一步：声明字体*/
+    /* 告诉浏览器 去哪找这个字体*/
+    @font-face {
+      font-family: 'my-web-font';
+      src: url('font/webfont.eot');
+      /* IE9*/
+      src: url('font/webfont.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('font/webfont.woff') format('woff'),
+        /* chrome、firefox */
+        url('font/webfont.ttf') format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('font/webfont.svg#webfont') format('svg');
+      /* iOS 4.1- */
+    }
+
+    /* 第二步：定义一个类名，谁加这类名，就会使用 webfont 字体*/
+    .webfont {
+      font-family: 'my-web-font';
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 第三步：引用 webfont 字体 -->
+  <p class="webfont">生命壹号，永不止步</p>
+</body>
+
+</html>

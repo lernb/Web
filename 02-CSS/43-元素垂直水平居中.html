@@ -11,12 +11,15 @@
       margin: 0;
       padding: 0;
     }
+
+    /* 行内元素垂直水平居中 */
     .father1 {
       text-align: center;
       height: 50px;
       line-height: 50px;
     }
 
+    /* 绝对定位 + margin(需要指定子元素的宽高) */
     .father2 {
       position: relative;
       min-height: 300px;
@@ -34,6 +37,7 @@
       margin-left: -100px;
     }
 
+    /* 绝对定位 + translate(无需指定子元素的宽高) */
     .father3 {
       position: relative;
       min-height: 300px;
@@ -49,6 +53,7 @@
       transform: translate(-50%, -50%);
     }
 
+    /* flex 布局 + margin: auto */
     .father4 {
       display: flex;
       min-height: 10vh;

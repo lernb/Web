@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex弹性圣杯布局</title>
+    <style>
+        html,body {
+            margin: 0;
+            height: 0;
+            height: 600px;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            flex:  0 0 60px;
+            background-color: springgreen;
+        }
+        main {
+            flex: auto;
+            display: flex;
+        }
+        nav {
+            flex: 0 0 100px;
+        }
+        section {
+            flex: auto;
+            background-color: tomato;
+        }
+        aside {
+            flex: 0 0 100px;
+        }
+        footer {
+            flex: 0 0 60px;
+            background-color: steelblue;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <nav></nav>
+        <section></section>
+        <aside></aside>
+    </main>
+    <footer></footer>
+</body>
+</html>

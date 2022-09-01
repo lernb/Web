@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../code/css/reset.css">
+  <title>圣杯布局</title>
+  <style>
+    .container {
+      padding: 0 220px 0 200px;
+    }
+
+    .middle,
+    .left,
+    .right {
+      position: relative;
+      float: left;
+      min-height: 300px;
+    }
+
+    .middle {
+      background-color: red;
+      width: 100%;
+    }
+
+    .left {
+      width: 200px;
+      background-color: yellow;
+      margin-left: -100%;
+      left: -200px;
+    }
+
+    .right {
+      width: 220px;
+      background-color: blue;
+      margin-left: -220px;
+      right: -220px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="middle">
+      <h4>我是middle</h4>
+      <p>我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分</p>
+    </div>
+    <div class="left">
+      <h4>我是left</h4>
+      <p>我是left的内容</p>
+    </div>
+    <div class="right">
+      <h4>我是right的内容</h4>
+      <p>我是right的内容</p>
+    </div>
+  </div>
+</body>
+
+</html>

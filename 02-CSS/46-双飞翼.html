@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../code/css/reset.css">
+    <title>双飞翼布局</title>
+    <style>
+        .main, .left, .right {
+            float: left;
+            height: 300px;
+
+        }
+        .main {
+            width: 100%;
+            background-color: blueviolet;
+        }
+
+        .main-wrap {
+            margin-left: 400px;
+            margin-right: 400px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        .left {
+            width: 400px;
+            margin-left: -100%;
+            background-color: cadetblue;
+        }
+
+        .right {
+            width: 400px;
+            margin-left: -400px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="main">
+            <div class="main-wrap">
+                <h4>我是main</h4>
+                <p>我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分</p>
+            </div>
+        </div>
+        <div class="left">
+            <h4>left</h4>
+            <p>我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分</p>
+        </div>
+        <div class="right">
+            <h4>right</h4>
+            <p>我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分我是内容部分</p>
+        </div>
+    </div>
+</body>
+
+</html>

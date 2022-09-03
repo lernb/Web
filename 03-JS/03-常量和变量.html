@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>常量和变量</title>
 </head>
+
 <body>
   <script>
     // 常量，也称为字面量，是固定值不可改变，所见即所得
@@ -16,7 +18,7 @@
     console.log('996');
     console.log('字符串')
     // 布尔常量，表示真或假，用true和false来表示
-    if(true) {
+    if (true) {
       console.log('如果是真，就会走这里的代码');
     }
     // 自定义常量，const 常量名称 = 常量值;
@@ -31,7 +33,15 @@
     const a = 1; // 定义一个常量并赋值
     let b = 1; // 定义一个变量并赋值
 
-    // 变量初始化
+    // 变量初始化，只有第一次给变量赋值称之为初始化
+    // 只声明定义一个变量没有初始化，那么这个变量中存储的值是undefined
+    // 先定义在赋值
+    var c;
+    c = 1;
+    // 定义同时赋值
+    var d = 1;
+    
   </script>
 </body>
+
 </html>

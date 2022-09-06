@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>数据类型</title>
 </head>
+
 <body>
   <script>
     /* 
       JS的数据类型：
       JS是弱类型语言，不需要提前声明变量的类型且变量的数据类型是可变的
-      var name = '张三';
-      name = 123; // name类型有字符串变为数字类型
+    */
+    var name = '张三'; // name类型是字符串类型
+    name = 123; // name类型有字符串变为数字类型
 
+    /*
       JS的八种数据类型
       基本数据类型(值类型)：String字符串、Number数值、Boolean布尔值、Null空值、Undefined未定义、BigInt大型数值、Symbol
       引用数据类型(引用类型)：Object对象
@@ -22,6 +26,17 @@
       基本数据类型和引用数据类型之间最大的差别：
       基本数据类型赋值时是传数值，引用类型赋值时是传地址
     */
+    /*
+      堆内存与栈内存：
+      JS中所有的变量都是保存在栈内存中。
+      基本数据类型：
+      基本数据类型的值直接保存在栈内存中，值与值之间是独立存在，修改一个变量的值不会影响其他变量
+
+      引用数据类型：
+      引用数据类型的值是保存在堆内存中，每创建一个对象就会在内存中开辟一个新空间，变量保存的是对象的内存地址(对象的引用)，
+      将对象的内存地址保存在栈内存中，如果两个多个变量同时引用了同一个对象，那么通过一个变量修改时，其他变量也会受影响
+    */
   </script>
 </body>
+
 </html>

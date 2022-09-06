@@ -36,6 +36,13 @@
       引用数据类型的值是保存在堆内存中，每创建一个对象就会在内存中开辟一个新空间，变量保存的是对象的内存地址(对象的引用)，
       将对象的内存地址保存在栈内存中，如果两个多个变量同时引用了同一个对象，那么通过一个变量修改时，其他变量也会受影响
     */
+    var obj1, obj2, obj3;
+    obj1 = new Object();
+    obj1.name = '张三';
+    obj2 = obj1;
+    obj2.name = '李四';
+    console.log(obj1.name); // obj1.name = '李四';
+    console.log(obj2.name); // obj2.name = '李四';
   </script>
 </body>
 

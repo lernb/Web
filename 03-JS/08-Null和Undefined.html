@@ -22,12 +22,18 @@
     */
 
     /* 
-      未定义类型undefined
-      声明了一个变量，但没有赋值，此时它的值就是undefined
+      未定义类型undefined：
+      Undefined类型的值只有一个，就是undefind
+      使用typeof检查一个undefined值时，会返回undefined
     */
+    // 1、声明了一个变量，但没有赋值，此时它的值就是undefined
     let name;
     console.log(name); // 打印结果：undefined
     console.log(typeof name); // 打印结果：undefined
+
+    // 2、变量未声明（未定义）时，使用这个变量会报undefined错误
+    console.log(typeof a); // undefined
+    console.log(a); // 打印结果：Uncaught ReferenceError: a is not defined
   </script>
 </body>
 

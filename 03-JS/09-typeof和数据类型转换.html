@@ -25,6 +25,13 @@
 
       typeof NaN 返回值是number
     */
+    console.log(typeof []); // 空数组的打印结果：object
+    console.log(typeof {}); // 空对象的打印结果：object
+    // 数组和对象都是引用类型Object
+
+    // instanceof可以区别数组
+    console.log([] instanceof Array); // 打印结果：true
+    console.log({} instanceof Array); // 打印结果：false
   </script>
 </body>
 

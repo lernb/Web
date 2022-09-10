@@ -11,7 +11,7 @@
 <body>
   <script>
     /* 
-      隐式类型转换：字符串拼接：
+      1、隐式类型转换：字符串拼接：
       变量+"" 或者 变量+"abc"
       实际上内部是调用的 String() 函数
     */
@@ -20,7 +20,7 @@
     console.log(a + 'haha'); // 转换成 String 类型：123haha
 
     /* 
-      toString()方法:
+      2、toString()方法:
       *该方法不会影响到原变量，它会将转换的结果返回，还可以直接写成a = a.toString()，这样的话，就是直接修改原变量
     */
     // 基本数据类型
@@ -53,6 +53,15 @@
     a = a.toString(2); // 转换为二进制
     console.log(a); // 11111111
     console.log(typeof a); // string
+
+    /* 
+      3、string()函数，string(变量)
+      对于Number、Boolean、Object而言，本质上就是调用toString()方法
+      对于null和undefined，则不会调用toString()方法。它会将null直接转换为"null"。将undefined直接转换为"undefined"
+
+      prompt()：用户的输入
+      prompt()就是专门用来弹出能够让用户输入的对话框。用户不管输入什么，都当字符串处理
+    */
   </script>
 </body>
 

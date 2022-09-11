@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>转换为Number类型</title>
 </head>
+
 <body>
   <script>
     // 1、使用Number()函数
-    
+    /*
+      情况一：字符串 --> 数字
+      如果字符串中是纯数字，则直接将其转换为数字
+      如果字符串是一个空串或者是一个全是空格的字符串，则转换为0
+      只要字符串中包含了其他非数字的内容（小数点按数字来算），则转换为 NaN
+      使用 Number() 函数之后，如果无法转换为数字，就会转换为 NaN。
+
+      情况二：布尔 --> 数字
+      true 转成 1
+      false 转成 0
+
+      情况三：null --> 数字，结果为：0
+
+      情况四：undefined --> 数字，结果为：NaN
+    */
+    // 2、
   </script>
 </body>
+
 </html>

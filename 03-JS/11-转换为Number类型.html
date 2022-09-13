@@ -46,7 +46,14 @@
 
       情况四：使用parseInt(Undefined) --> 数字，结果为：NaN
     */
-    
+    /* 
+      Number()和parseInt()的区别：
+      比如Number(true)和parseInt(true)，Number(true)尽可能的转换为数字，不行则返回NaN
+      parseInt(true)则提取最前面的数字部分，没有则返回NaN
+
+      parseInt()具有的特性：
+      会将传入的数据当做字符串来处理，如果不是字符串则会先将其转换字符串
+    */
   </script>
 </body>
 

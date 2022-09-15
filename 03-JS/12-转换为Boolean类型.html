@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>转换为Boolean类型</title>
 </head>
+
 <body>
   <script>
     /* 
       其他的数据类型都可以转换为 Boolean 类型
       情况一：数字 --> 布尔。 0 和 NaN是 false，其余的都是 true。比如 Boolean(NaN)的结果是 false
+      情况二：字符串 ---> 布尔。空串是false，其余的都是 true。全是空格的字符串，转换结果也是 true。字符串'0'的转换结果也是 true
+      情况三：null 和 undefined 都会转换为 false
+      情况四：引用数据类型会转换为 true。空数组[]和空对象{}，转换结果也是 true
     */
+    // 举例：（接口返回的内容不为空，前端才做进一步的事情）
+    const result1 = '';
+    const result2 = { a: 'data1', b: 'data2' };
+
+    if (result1) {
+      console.log('因为 result1的内容为空，所以代码进不了这里');
+    }
+
+    if (result2 && result2.a) {
+      // 接口返回了 result2，且 result2.a 里面有值，前端才做进一步的事情
+      console.log('代码能进来，前端继续在这里干活儿');
+    }
+
+    /* 
+      隐式类型转换
+      当非 Boolean 类型的数值和 Boolean 类型的数值做比较时，会先把前者临时进行隐式转换为 Boolean 类型，然后再做比较，且不会改变前者的数据类型
+    */
+    const a = 1;
+
+    console.log(a == true); // 打印结果：true
+    console.log(typeof a); // 打印结果：number
+    console.log(0 == true); // 打印结果：false
   </script>
 </body>
+
 </html>

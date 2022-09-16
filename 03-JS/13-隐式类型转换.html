@@ -31,12 +31,21 @@
     // 任何值做+a、-a运算时，内部调用的是Number()函数，不会改变原数值
     var a = '666';
     var b = +a;
-
     console.log(typeof a); // 打印结果：string，说明 a 的数据类型保持不变
     console.log(a); // 打印结果：666
-
     console.log(typeof b); // 打印结果：number，说明 b 的数据类型发生了变化
     console.log(b); // 打印结果：666
+
+    // 3、自增/自减运算符：++、—-
+    var a = '666';
+    a++; // 先调用Number()函数，然后将Number()的返回结果进行加1操作
+    console.log(typeof a); // 打印结果： number
+    console.log(a); // 打印结果：667
+
+    var a = 'abc';
+    a++;
+    console.log(typeof a); // 打印结果：number
+    console.log(a); // 打印结果：NaN。因为 Number('abc')的结果为 NaN，再自增后，结果依然是 NaN
   </script>
 </body>
 

@@ -20,12 +20,23 @@
 
     // Boolean + 数字 = 数字
     // Boolean型和数字型相加时，true转换为1，false转换为0，这里先调Number()函数，将Boolean类型转为Number类型，然后再和数字相加
-    
+
     // null + 数字 = 数字，等价于：0 + 数字
 
     // undefined + 数字 = NaN，计算结果：NaN
 
     // 任何值和 NaN 做运算的结果都是 NaN
+
+    // 2、正号/负号：+a、-a
+    // 任何值做+a、-a运算时，内部调用的是Number()函数，不会改变原数值
+    var a = '666';
+    var b = +a;
+
+    console.log(typeof a); // 打印结果：string，说明 a 的数据类型保持不变
+    console.log(a); // 打印结果：666
+
+    console.log(typeof b); // 打印结果：number，说明 b 的数据类型发生了变化
+    console.log(b); // 打印结果：666
   </script>
 </body>
 

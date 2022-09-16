@@ -46,6 +46,17 @@
     a++;
     console.log(typeof a); // 打印结果：number
     console.log(a); // 打印结果：NaN。因为 Number('abc')的结果为 NaN，再自增后，结果依然是 NaN
+
+    // 4、isNaN() 函数
+    // 判断指定的参数是否为 NaN（非数字类型），返回结果为 Boolean 类型
+    // 任何不能被转换为数值的参数，都会让这个函数返回 true
+    // 内部先调用Number(参数)函数，然后将Number(参数)的返回结果是否为数值
+    // 如果不为数值，则最终结果为 true；如果为数值，则最终结果为 false
+    console.log(isNaN('123')); // 返回结果：false。
+    console.log(isNaN(null)); // 返回结果：false
+    console.log(isNaN('abc')); // 返回结果：true。因为 Number('abc') 的返回结果是 NaN
+    console.log(isNaN(undefined)); // 返回结果：true
+    console.log(isNaN(NaN)); // 返回结果：true
   </script>
 </body>
 

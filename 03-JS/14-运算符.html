@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>运算符</title>
 </head>
+
 <body>
   <script>
     /* 
@@ -25,7 +27,7 @@
       比较运算符
       三元运算符（条件运算符）
     */
-    
+
     // 算术运算符：用于执行两个变量或值的算术运算
     // +、*、/、%（获取余数）
     // 取余运算：
@@ -38,9 +40,36 @@
       如果 m<n，那结果就是 m。
       取余运算结果的正负性，取决于 m，而不是 n。比如：10 % -3的运算结果是 1。-10 % 3的运算结果是-1
     */
-    
+
     // 自增和自减：a++、++a和a--、--a
-    // 变量自增或者自减后，变量的原值会自增或者自减1，
+    // 变量自增或者自减后，变量的原值会自增或者自减1
+    /* 
+      那这两种自增和自减的区别：
+      a++：先把 a 的值赋值给表达式，然后 a 再自增
+      ++a：a 先自增，然后再把自增的值赋给表达式
+
+      自减同理
+    */
+    var n1 = 10;
+    var n2 = 20;
+    var result1 = n1++;
+    console.log(n1); // 11
+    console.log(result1); // 10
+
+    result = ++n1;
+    console.log(n1); //12
+    console.log(result); //12
+
+    var result2 = n2--;
+    console.log(n2); // 19
+    console.log(result2); // 20
+
+    result2 = --n2;
+    console.log(n2); // 18
+    console.log(result2); // 18
+
+    
   </script>
 </body>
+
 </html>

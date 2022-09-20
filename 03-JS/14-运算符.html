@@ -68,7 +68,24 @@
     console.log(n2); // 18
     console.log(result2); // 18
 
-    
+    // 一元运算符：typeof、+、-
+    // typeof 就是典型的一元运算符，因为后面只跟一个操作数
+    var a = '123';
+    console.log(typeof a); // 打印结果：string
+    // 正号：+
+    // 正号不会对数字产生任何影响。比如说，2和+2是一样的
+    // 可以对一个其他的数据类型使用+，来将其转换为 number
+    var a = true;
+    a = +a; // 注意这行代码的一元运算符操作
+    console.log('a：' + a);
+    console.log(typeof a); // 打印结果为number
+
+    console.log('-----------------');
+
+    var b = '18';
+    b = +b; // 注意这行代码的一元运算符操作
+    console.log('b：' + b);
+    console.log(typeof b); // 打印结果为number
   </script>
 </body>
 

@@ -26,7 +26,17 @@
     if (result.resultCode == 0) {
       var a = result && result.data && result.data.imgUrl || 'http://img.com/img.jpg';
     }
-    // 上方代码的意思是获取result对象中的result.data.imgUrl里的图片资源，如果返回的字段中没有result.data.imgUrl，即||左边的表达式结果为false，那么则使用右边的http://img.com/img.jpg的结果作为兜底
+    /* 
+      上方代码的意思是获取result对象中的result.data.imgUrl里的图片资源，先判断result对象中是否有result.data.imgUrl字段，
+      如果没有,即||左边的表达式结果相当于false，那么则使用||右边的http://img.com/img.jpg的结果作为兜底
+    */
+
+    // 非布尔值的 ! 运算
+    // 非布尔值进行非运算时，会先将其转换为布尔值，然后再运算，返回结果是布尔值
+    let a = 10;
+    a = !a;
+    console.log(a); // false
+    console.log(typeof a); // boolean
   </script>
 </body>
 

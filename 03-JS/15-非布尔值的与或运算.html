@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非布尔值的与或运算</title>
+</head>
+
+<body>
+  <script>
+    // 做容错处理或者兜底处理
+    var result = 5 && 6; // 运算过程：true && true;
+    console.log('result：' + result); // 打印结果：6
+    /*
+      与运算的返回结果：（以多个非布尔值的运算为例）
+      如果第一个值为 false，则执行第一条语句，并直接返回第一个值；不会再往后执行。
+      如果第一个值为 true，则继续执行第二条语句，并返回第二个值（如果所有的值都为 true，则返回的是最后一个值）
+
+      或运算的返回结果：（以多个非布尔值的运算为例）
+      如果第一个值为 true，则执行第一条语句，并直接返回第一个值；不会再往后执行。
+      如果第一个值为 false，则继续执行第二条语句，并返回第二个值（如果所有的值都为 false，则返回的是最后一个值）
+    */
+    // 容错兜底处理：
+    if (result.resultCode == 0) {
+      var a = result && result.data && result.data.imgUrl || 'http://img.com/img.jpg';
+    }
+    // 上方代码的意思是获取result对象中的result.data.imgUrl里的图片资源，如果返回的字段中没有result.data.imgUrl，即||左边的表达式结果为false，那么则使用右边的http://img.com/img.jpg的结果作为兜底
+  </script>
+</body>
+
+</html>

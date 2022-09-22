@@ -119,6 +119,23 @@
       !== 不全等于
       */
     // 比较运算符，得到的结果都是布尔值：要么是 true，要么是 false
+    var result = 5 > 10; // false
+
+    // 非数值比较：
+    // 对于非数值进行比较时，会将其转换为数字然后再比较
+    console.log(1 > true); //false
+    console.log(1 >= true); //true
+    console.log(1 > '0'); //true
+
+    //console.log(10 > null); //true
+
+    //任何值和NaN做任何比较都是false
+
+    console.log(10 <= 'hello'); //false
+    console.log(true > false); //true
+    // 【重要】特殊情况：如果符号两侧的值都是字符串时，不会将其转换为数字进行比较。比较两个字符串时，比较的是字符串的Unicode 编码
+    console.log('56' > '123'); // true
+    // 比较两个字符串型的数字时，一定一定要先转型再比较大小，比如 parseInt()
   </script>
 </body>
 

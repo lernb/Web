@@ -145,6 +145,26 @@
     console.log(true == '1'); // 打印结果：true
     console.log(0 == -0); // 打印结果：true
     console.log(null == 0); // 打印结果：false
+
+    // undefined 衍生自 null，所以这两个值做相等判断时，会返回 true
+    console.log(undefined == null); //打印结果：true
+
+    // NaN 不和任何值相等，包括他本身
+    console.log(NaN == NaN); //false
+    console.log(NaN === NaN); //false
+
+    // 通过isNaN()来判断是否为NaN
+    console.log(isNaN(b)); // 是NaN则返回true
+
+    // ===全等符号
+    // 全等在比较时，不会做类型转换，绝对等于
+    console.log('6' === 6); //false
+    console.log(6 === 6); //true
+
+    // ==相反的是!=，===相反的是!==
+    console.log(3 != 8); // true
+    console.log(3 != '3'); // false，因为3=="3"是true，所以反过来就是false
+    console.log(3 !== '3'); // true，应为3==="3"是false，所以反过来是true
   </script>
 </body>
 

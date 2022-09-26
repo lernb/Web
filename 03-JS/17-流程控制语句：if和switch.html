@@ -32,6 +32,33 @@
     } else {
       // 条件1、2、3都不满足时，做的事情
     }
+    // 以上所有的语句体中，只执行其中满足条件的一个
+
+    // if语句嵌套
+    var bianhao = parseInt(prompt('您想加什么油？填写92或者97'));
+    var sheng = parseFloat(prompt('您想加多少升？'));
+    //第二步，判断
+    if (bianhao == 92) {
+      //编号是92的时候做的事情
+      if (sheng >= 20) {
+        var price = sheng * 5.9;
+      } else {
+        var price = sheng * 6;
+      }
+    } else if (bianhao == 97) {
+      //编号是97的时候做的事情
+      if (sheng >= 30) {
+        var price = sheng * 6.95;
+      } else {
+        var price = sheng * 7;
+      }
+    } else {
+      alert('不好意思，没有这个编号的汽油！');
+    }
+    alert('价格是' + price);
+
+    // switch条件分支语句
+    
   </script>
 </body>
 

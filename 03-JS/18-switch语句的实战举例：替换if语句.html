@@ -34,7 +34,56 @@
     }
     // 以上这种写法嵌套太深，可读性很差
 
-    
+    // 下面使用 return 的方式，让function里的代码不再继续往下走
+    let retCode2 = 1003; // 返回码 retCode2 的值可能有很多种情况
+    handleRetCode(retCode2);
+
+    // 方法：根据接口不同的返回码，处理前端不同的显示状态
+    function handleRetCode(retCode2) {
+      if (retCode2 == 0) {
+        alert('接口联调成功');
+        return;
+      }
+
+      if (retCode2 == 101) {
+        alert('活动不存在');
+        return;
+      }
+
+      if (retCode2 == 103) {
+        alert('活动未开始');
+        return;
+      }
+
+      if (retCode2 == 104) {
+        alert('活动已结束');
+        return;
+      }
+
+      if (retCode2 == 1001) {
+        alert('参数错误');
+        return;
+      }
+
+      if (retCode2 == 1002) {
+        alert('接口频率限制');
+        return;
+      }
+
+      if (retCode2 == 1003) {
+        alert('未登录');
+        return;
+      }
+
+      if (retCode2 == 1004) {
+        alert('（风控用户）提示 活动太火爆啦~军万马都在挤，请稍后再试');
+        return;
+      }
+
+      // 其他异常返回码
+      alert('系统君失联了，请稍候再试');
+      return;
+    }
   </script>
 </body>
 

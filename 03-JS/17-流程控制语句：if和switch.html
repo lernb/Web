@@ -77,6 +77,7 @@
       switch 后面的括号里可以是表达式或者值，通常是变量
       JS属于弱类型语言，case 后面的值可以使任意类型的值，也可以是表达式
     */
+    // case后面的是值：
     let msg = 'notice';
     switch (msg) {
       case 'notice':
@@ -87,6 +88,23 @@
         break;
       case 'error':
         console.log('错误');
+        break;
+      default:
+        console.log('默认文案');
+        break;
+    }
+    
+    // case后面是表达式：
+    let age = 28;
+    switch (true) {
+      case age < 18:
+        console.log('未成年人');
+        break;
+      case age >= 18 && age <= 65:
+        console.log('还能干活儿');
+        break;
+      case age > 65:
+        console.log('该退休了');
         break;
       default:
         console.log('默认文案');

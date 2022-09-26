@@ -58,7 +58,40 @@
     alert('价格是' + price);
 
     // switch条件分支语句
-    
+    switch (表达式) {
+      case 值1:
+        // 语句体1;
+        break;
+      case 值2:
+        // 语句体2;
+        break;
+      default:
+        // 语句体 n + 1;
+        break;
+    }
+    /* 
+      执行流程：
+      计算出表达式的值，和case依次进行比较，符合 case 对应的值，就会执行相应的语句，执行后遇到 break 就结束语句执行
+      如果所有的 case 都和表达式的值不匹配，就会执行 default 语句体部分
+
+      switch 后面的括号里可以是表达式或者值，通常是变量
+      JS属于弱类型语言，case 后面的值可以使任意类型的值，也可以是表达式
+    */
+    let msg = 'notice';
+    switch (msg) {
+      case 'notice':
+        console.log('提示');
+        break;
+      case 'warning':
+        console.log('警告');
+        break;
+      case 'error':
+        console.log('错误');
+        break;
+      default:
+        console.log('默认文案');
+        break;
+    }
   </script>
 </body>
 

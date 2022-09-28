@@ -173,3 +173,56 @@ console.log([] instanceof Array); // 结果为true
 console.log({} instanceof Array); // 结果为false
 ```
 
+### 使用 parseInt()函数：字符串 -> 整数
+
+将传入的数据当作**字符串**来处理，从左至右提取数值, 一旦遇到非数值就立即停止；停止时如何还没有提取到数值, 那么就返回NaN。
+
+**情况一：字符串 --> 数字**
+
+（1）**只保留字符串最开头的数字**，后面的中文自动消失。
+
+（2）如果字符串不是以数字开头，则转换为 NaN。
+
+（3）如果字符串是一个空串或者是一个全是空格的字符串，转换时会报错。
+
+**情况二：Boolean --> 数字**，结果为：NaN
+
+**情况三：Null --> 数字**，结果为：NaN
+
+**情况四：Undefined --> 数字**，结果为：NaN
+
+> parseInt()、parseFloat()会将传入的数据当作**字符串**来处理。如果对**非 String**使用 parseInt()、parseFloat()，则会**先将其转换为 String** 然后再操作。
+
+* **只保留字符串最开头的数字**，后面的中文自动消失：
+
+  ``` javascript
+  console.log(parseInt('2017年')); //打印结果：2017
+  console.log(parseInt('2017.01年')); //打印结果仍是：2017   （说明只会取整数）
+  console.log(parseInt('aaa2017.01年')); //打印结果：NaN （因为不是以数字开头）
+  ```
+
+* 自动截断小数：**取整，不四舍五入**：
+
+  ```javascript
+  var a = parseInt(5.8) + parseInt(4.7);
+  console.log(a); // 9
+  ```
+
+* 带两个参数时，表示在转换时，包含了进制转换:
+
+  ```javascript
+  var a = '110';
+  var num = parseInt(a, 16); // 【重要】将 a 当成 十六进制 来看待，转换成 十进制 的 num
+  console.log(num); // 272
+  ```
+
+### 转换为 Boolean
+
+* 数字 --> 布尔。 0 和 NaN是 false，其余的都是 true
+* 字符串 ---> 布尔。空串是false，其余的都是 true。全是空格的字符串，转换结果也是 true。字符串`'0'`的转换结果也是 true
+* null 和 undefined 都会转换为 false
+* 引用数据类型会转换为 true。**空数组`[]`和空对象`{}`，转换结果也是 true**
+
+#### !!显式转换为 Boolean
+
+使用 `!!`可以显式转换为 Boolean 类型。比如 `!!3`的结果是 true

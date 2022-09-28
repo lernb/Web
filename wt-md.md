@@ -85,3 +85,72 @@ var a = '4' + 3 - 6;
 console.log(a); // 结果是37
 ```
 
+### Null和Undefined
+
+#### Null：空对象
+
+null专门用来定义一个空对象，例如：`let a = null`或者`Object.create(null)`，null相当于是一个地址为空的object。
+
+``` javascript
+let a = null;
+console.log(typeof a); // 结果为object
+```
+
+> Null类型的值只有一个，就是null
+>
+> `typeof null`会返回object
+
+#### Undefined：未定义类型
+
+* 变量已声明但未赋值，此时变量的值就为undefined
+
+  ``` javascript
+  let a;
+  console.log(a); // 结果为undefined
+  console.log(typeof a); // 结果为undefined
+  ```
+
+  > Undefined类型的值只有一个，就是undefined
+  >
+  > 使用`typeof`检查一个undefined的值，返回undefined
+
+* 变量未声明（未定义）就使用会报错，`typeof`检查会返回`undefined`
+
+  ``` javascript
+  console.log(a); // 报错：Uncaught ReferenceError: a is not defined
+  console.log(typeof a); // undefined
+  ```
+
+* 函数没有return返回语句，那么这个函数的返回值就是undefined，相当于是`return undefined`
+
+  ``` javascript
+  function f() {};
+  console.log(f()); // 结果为undefined
+  ```
+
+* 调用函数没有传参，此时参数的值就是undefined
+
+  ``` javascript
+  function f(name) {
+    console.log(name);
+  };
+  f(); // 调用函数时，未传参。执行函数后的打印结果：undefined
+  ```
+
+  > 实际开发中，如果调用函数时没有传参，我们可以根据需要给形参设置一个默认值：
+  >
+  > ``` javascript
+  > function f(name) {
+  > 	name = name || '张三';
+  >   console.log(name);
+  > }
+  > f();
+  > ```
+
+#### Null和Undefined的其他区别
+
+`null == undefined`的结果为`true`，但是`null === undefined`的结果为`false`；
+
+`null`与任何值运算，null都可看做`0`；
+
+`undefined`与任何值运算，结果都是`NaN`

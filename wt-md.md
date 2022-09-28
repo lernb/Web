@@ -226,3 +226,33 @@ console.log({} instanceof Array); // 结果为false
 ### !!显式转换为 Boolean
 
 使用 `!!`可以显式转换为 Boolean 类型。比如 `!!3`的结果是 true
+
+## 运算符：`-`、`*`、`/`、`%`
+
+任何非 Number 类型的值做`-`、`*`、`/`、`%`运算时，会将这些值转换为 Number 然后再运算(内部调用的是 Number() 函数），运算结果是 Number 类型。
+
+## 非布尔值的与或运算
+
+* **与运算**的返回结果：（以多个非布尔值的运算为例）
+  - 如果第一个值为 false，则执行第一条语句，并直接返回第一个值；不会再往后执行。
+  - 如果第一个值为 true，则继续执行第二条语句，并返回第二个值（如果所有的值都为 true，则返回的是最后一个值）。
+
+* **或运算**的返回结果：（以多个非布尔值的运算为例）
+  - 如果第一个值为 true，则执行第一条语句，并直接返回第一个值；不会再往后执行。
+  - 如果第一个值为 false，则继续执行第二条语句，并返回第二个值（（如果所有的值都为 false，则返回的是最后一个值）。
+
+```javascript
+var result = 5 && 6; // 运算过程：true && true;
+console.log('result：' + result); // 打印结果：6（也就是说最后面的那个值。）
+```
+
+### 容错处理
+
+```javascript
+if (result.resultCode == 0) {
+    var a = result && result.data && result.data.imgUrl || 'http://img.smyhvae.com/20160401_01.jpg';
+}
+```
+
+获取返回结果中的`result.data.imgUrl`这个图片资源；如果返回结果中没有 `result.data.imgUrl` 这个字段，就用 `http://img.smyhvae.com/20160401_01.jpg` 作为**兜底**图片。
+

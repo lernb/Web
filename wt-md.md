@@ -154,3 +154,22 @@ console.log(typeof a); // 结果为object
 `null`与任何值运算，null都可看做`0`；
 
 `undefined`与任何值运算，结果都是`NaN`
+
+### typeof 运算符
+
+`typeof`表示获取变量的数据类型，返回值是小写，字符串
+
+``` javascript
+// 写法1
+typeof 变量;
+// 写法2
+typeof(变量);
+```
+
+`typeof`无法区分数组，`instanceof`可以：
+
+``` javascript
+console.log([] instanceof Array); // 结果为true
+console.log({} instanceof Array); // 结果为false
+```
+

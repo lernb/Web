@@ -491,3 +491,69 @@ switch (retCode) {
 ```
 
 上面改用switch书写，避免使用`if`语句，导致代码嵌套过深。
+
+### switch 语句的优雅写法：适时地去掉 break
+
+原代码：
+
+```javascript
+let day = 2;
+
+switch (day) {
+    case 1:
+        console.log('work');
+        break;
+
+    case 2:
+        console.log('work');
+        break;
+
+    case 3:
+        console.log('work');
+        break;
+
+    case 4:
+        console.log('work');
+        break;
+
+    case 5:
+        console.log('work');
+        break;
+
+    case 6:
+        console.log('relax');
+        break;
+
+    case 7:
+        console.log('relax');
+        break;
+
+    default:
+        break;
+}
+```
+
+改进后：
+
+```javascript
+let day = 2;
+
+switch (day) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log('work');
+        break; // 在这里放一个 break
+
+    case 6:
+    case 7:
+        console.log('relax');
+        break; // 在这里放一个 break
+
+    default:
+        break;
+	}
+}
+```

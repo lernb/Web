@@ -291,45 +291,76 @@ switch的执行流程：
 
 switch 语句中的`break`可以省略，但会出现case穿透现象。
 
-```javascript
-var num = 4;
+* ```javascript
+  var num = 4;
+  
+  //switch判断语句
+  switch (num) {
+      case 1:
+          console.log('星期一');
+          break;
+      case 2:
+          console.log('星期二');
+          break;
+      case 3:
+          console.log('星期三');
+          break;
+      case 4:
+          console.log('星期四');
+      //break;
+      case 5:
+          console.log('星期五');
+      //break;
+      case 6:
+          console.log('星期六');
+          break;
+      case 7:
+          console.log('星期日');
+          break;
+      default:
+          console.log('你输入的数据有误');
+          break;
+  }
+  ```
 
-//switch判断语句
-switch (num) {
-    case 1:
-        console.log('星期一');
-        break;
-    case 2:
-        console.log('星期二');
-        break;
-    case 3:
-        console.log('星期三');
-        break;
-    case 4:
-        console.log('星期四');
-    //break;
-    case 5:
-        console.log('星期五');
-    //break;
-    case 6:
-        console.log('星期六');
-        break;
-    case 7:
-        console.log('星期日');
-        break;
-    default:
-        console.log('你输入的数据有误');
-        break;
-}
-```
+  上方代码执行的结果为：
 
-上方代码执行的结果为：
+  ``` javascript
+  星期四
+  星期五
+  星期六
+  ```
 
-``` javascript
-星期四
-星期五
-星期六
-```
+  因为在 case 4 和 case 5 中都没有 break，那语句走到 case 6 的 break 才会停止。
 
-因为在 case 4 和 case 5 中都没有 break，那语句走到 case 6 的 break 才会停止。
+* 
 
+* ```javascript
+  //switch判断语句
+  var number = 5;
+  
+  switch (number) {
+      default:
+          console.log('我是defaul语句');
+      // break;
+      case 2:
+          console.log('第二个呵呵:' + number);
+      //break;
+      case 3:
+          console.log('第三个呵呵:' + number);
+          break;
+      case 4:
+          console.log('第四个呵呵:' + number);
+          break;
+  }
+  ```
+
+  上方代码执行的结果为：
+
+  ``` javascript
+  我是defaul语句
+  第二个呵呵:5
+  第三个呵呵:5
+  ```
+
+  代码走到 default 时，因为没有遇到`break`，所以会继续往下走，直到遇见`break`或者走到程序的末尾。

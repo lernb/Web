@@ -256,3 +256,80 @@ if (result.resultCode == 0) {
 
 获取返回结果中的`result.data.imgUrl`这个图片资源；如果返回结果中没有 `result.data.imgUrl` 这个字段，就用 `http://img.smyhvae.com/20160401_01.jpg` 作为**兜底**图片。
 
+## switch 语句（条件分支语句）
+
+语法格式：
+
+```javascript
+switch(表达式) {
+	case 值1：
+		语句体1;
+		break;
+
+	case 值2：
+		语句体2;
+		break;
+	...
+	...
+	default：
+		语句体 n+1;
+		break;
+}
+```
+
+switch的执行流程：
+
+* 首先，计算出表达式的值，和 case 依次比较，一旦有对应的值，就会执行相应的语句，在执行的过程中，遇到 break 就会结束。
+* 如果所有的 case 都和表达式的值不匹配，就会执行 default 语句体部分。
+
+### *switch 语句的结束条件*【重要】
+
+* 遇到`break`就结束了执行，而不是遇到`default`
+* 执行到程序的末尾结束
+
+### case 穿透
+
+switch 语句中的`break`可以省略，但会出现case穿透现象。
+
+```javascript
+var num = 4;
+
+//switch判断语句
+switch (num) {
+    case 1:
+        console.log('星期一');
+        break;
+    case 2:
+        console.log('星期二');
+        break;
+    case 3:
+        console.log('星期三');
+        break;
+    case 4:
+        console.log('星期四');
+    //break;
+    case 5:
+        console.log('星期五');
+    //break;
+    case 6:
+        console.log('星期六');
+        break;
+    case 7:
+        console.log('星期日');
+        break;
+    default:
+        console.log('你输入的数据有误');
+        break;
+}
+```
+
+上方代码执行的结果为：
+
+``` javascript
+星期四
+星期五
+星期六
+```
+
+因为在 case 4 和 case 5 中都没有 break，那语句走到 case 6 的 break 才会停止。
+

@@ -362,3 +362,132 @@ switch 语句中的`break`可以省略，但会出现case穿透现象。
   ```
 
   代码走到 default 时，因为没有遇到`break`，所以会继续往下走，直到遇见`break`或者走到程序的末尾。
+
+### switch 语句的实战举例：替换 if 语句
+
+```javascript
+let retCode = 1003; // 返回码 retCode 的值可能有很多种情况
+
+if (retCode == 0) {
+    alert('接口联调成功');
+} else if (retCode == 101) {
+    alert('活动不存在');
+} else if (retCode == 103) {
+    alert('活动未开始');
+} else if (retCode == 104) {
+    alert('活动已结束');
+} else if (retCode == 1001) {
+    alert('参数错误');
+} else if (retCode == 1002) {
+    alert('接口频率限制');
+} else if (retCode == 1003) {
+    alert('未登录');
+} else if (retCode == 1004) {
+    alert('（风控用户）提示 活动太火爆啦~军万马都在挤，请稍后再试');
+} else {
+    // 其他异常返回码
+    alert('系统君失联了，请稍候再试');
+}
+```
+
+上面这种书写方式容易导致嵌套太深，可读性很差。
+
+改进代码：
+
+```javascript
+let retCode = 1003; // 返回码 retCode 的值可能有很多种情况
+handleRetCode(retCode);
+
+// 方法：根据接口不同的返回码，处理前端不同的显示状态
+function handleRetCode(retCode) {
+    if (retCode == 0) {
+        alert('接口联调成功');
+        return;
+    }
+
+    if (retCode == 101) {
+        alert('活动不存在');
+        return;
+    }
+
+    if (retCode == 103) {
+        alert('活动未开始');
+        return;
+    }
+
+    if (retCode == 104) {
+        alert('活动已结束');
+        return;
+    }
+
+    if (retCode == 1001) {
+        alert('参数错误');
+        return;
+    }
+
+    if (retCode == 1002) {
+        alert('接口频率限制');
+        return;
+    }
+
+    if (retCode == 1003) {
+        alert('未登录');
+        return;
+    }
+
+    if (retCode == 1004) {
+        alert('（风控用户）提示 活动太火爆啦~军万马都在挤，请稍后再试');
+        return;
+    }
+
+    // 其他异常返回码
+    alert('系统君失联了，请稍候再试');
+    return;
+}
+```
+
+上面使用`return`方式，让代码不在继续往下走。
+
+```javascript
+let retCode = 1003; // 返回码 retCode 的值可能有很多种情况
+
+switch (retCode) {
+    case 0:
+        alert('接口联调成功');
+        break;
+    case 101:
+        alert('活动不存在');
+        break;
+
+    case 103:
+        alert('活动未开始');
+        break;
+
+    case 104:
+        alert('活动已结束');
+        break;
+
+    case 1001:
+        alert('参数错误');
+        break;
+
+    case 1002:
+        alert('接口频率限制');
+        break;
+
+    case 1003:
+        alert('未登录');
+        break;
+
+    case 1004:
+        alert('（风控用户）提示 活动太火爆啦~军万马都在挤，请稍后再试');
+        break;
+
+    // 其他异常返回码
+    default:
+        alert('系统君失联了，请稍候再试');
+        break;
+}
+```
+
+上面改用switch书写，避免使用`if`语句，导致代码嵌套过深。

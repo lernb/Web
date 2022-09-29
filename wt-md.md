@@ -333,8 +333,6 @@ switch 语句中的`break`可以省略，但会出现case穿透现象。
 
   因为在 case 4 和 case 5 中都没有 break，那语句走到 case 6 的 break 才会停止。
 
-* 
-
 * ```javascript
   //switch判断语句
   var number = 5;

@@ -557,3 +557,74 @@ switch (day) {
 	}
 }
 ```
+
+## break 和 continue
+
+### break
+
+- break 可以用来退出 switch 语句或退出**整个**循环语句（循环语句包括 for 循环、while 循环。不包括 if。单独的 if 语句里不能用 break 和 continue，否则会报错）。
+- break 会立即终止离它**最近**的那个循环语句。
+- 可以为循环语句创建一个 label，来标识当前的循环（格式：label:循环语句）。使用 break 语句时，可以在 break 后跟着一个 label，这样 break 将会结束指定的循环，而不是最近的。
+
+通过 break 终止循环语句:
+
+``` javascript
+for (var i = 0; i < 5; i++) {
+    console.log('i的值:' + i);
+    if (i == 2) {
+        break; // 这里的 break 是服务于外面的 for 循环。
+    }
+}
+```
+
+结果为：
+
+``` javascript
+i的值:0
+i的值:1
+i的值:2
+```
+
+**label 的使用**
+
+```javascript
+outer: for (var i = 0; i < 5; i++) {
+    console.log('外层循环 i 的值：' + i);
+    for (var j = 0; j < 5; j++) {
+        break outer; // 直接跳出outer所在的外层循环（outer是自定义的label）
+        console.log('内层循环 j 的值:' + j);
+    }
+}
+```
+
+结果为：
+
+``` javascript
+外层循环 i 的值：0
+```
+
+### continue
+
+- continue 可以用来跳过**当次**循环，继续下一次循环。
+- 同样，continue 默认只会离他**最近**的循环起作用。
+- 同样，如果需要跳过指定的当次循环，可以使用 label 标签。
+
+```javascript
+for (var i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    console.log('i的值:' + i);
+}
+```
+
+结果为：
+
+``` javascript
+i的值:1
+i的值:3
+i的值:5
+i的值:7
+i的值:9
+```
+
